@@ -1,0 +1,21 @@
+//
+//  notebook.pch
+//  NoteBook
+//
+//  Created by zx_06 on 15/4/28.
+//  Copyright (c) 2015年 sunshilong. All rights reserved.
+//
+
+#ifndef NoteBook_notebook_pch
+#define NoteBook_notebook_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#define kWidth [UIScreen mainScreen].bounds.size.width
+#define kHeight [UIScreen mainScreen].bounds.size.height
+
+#define debugLog(...) NSLog(__VA_ARGS__)
+
+#define documentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
+#endif
