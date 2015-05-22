@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>80CB7C5E-0484-4F81-87C4-6F9E6EAFD14C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NoteBook</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9218F708B3D2FBF3F579915DC1A4D997E0CBCCD4</key>
+		<string>https://github.com/longgeshashen/NoteBook.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NoteBook.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9218F708B3D2FBF3F579915DC1A4D997E0CBCCD4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/longgeshashen/NoteBook.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9218F708B3D2FBF3F579915DC1A4D997E0CBCCD4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9218F708B3D2FBF3F579915DC1A4D997E0CBCCD4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NoteBook</string>
+		</dict>
+	</array>
+</dict>
+</plist>

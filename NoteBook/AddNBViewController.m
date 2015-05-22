@@ -77,7 +77,7 @@
     if (indexPath.row==2) {
         return 150.0f;
     }
-    return 90.0f;
+    return 60.0f;
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *Cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"noteBookCell%ld",indexPath.row] forIndexPath:indexPath];
@@ -86,6 +86,7 @@
         case 0:
         {
             nameField = [[UITextField alloc] initWithFrame:CGRectMake(100, 10, 200, 30)];
+            nameField.borderStyle = UITextBorderStyleRoundedRect;
             nameField.returnKeyType = UIReturnKeyDone;
             nameField.delegate = self;
             [Cell.contentView addSubview:nameField];
@@ -94,6 +95,7 @@
         case 1:
         {
             timeField = [[UITextField alloc] initWithFrame:CGRectMake(100, 10, 200, 30)];
+            timeField.borderStyle = UITextBorderStyleRoundedRect;
             timeField.returnKeyType = UIReturnKeyDone;
             timeField.delegate = self;
             [Cell.contentView addSubview:timeField];
