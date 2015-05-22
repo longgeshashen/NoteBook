@@ -18,4 +18,8 @@
 
 #define documentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 
+#define DEVICE_IS_IPHONE4 ([[UIScreen mainScreen] bounds].size.height < 568) //判断该设备是否为3.5寸
+#define DEVICE_IS_IPHONE5 ([[UIScreen mainScreen] bounds].size.height >= 568) //判断该设备是否为5
+#define DeviceVersion  [[[UIDevice currentDevice] systemVersion] floatValue]
+
 #endif

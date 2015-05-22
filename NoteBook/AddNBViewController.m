@@ -20,6 +20,8 @@
 
 @implementation AddNBViewController
 @synthesize editNBTableView,nameField,timeField,styleField,contentTextView;
+@synthesize pickerView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //
@@ -110,7 +112,9 @@
             timeField = [[UITextField alloc] initWithFrame:CGRectMake(100, 10, 200, 30)];
             timeField.borderStyle = UITextBorderStyleRoundedRect;
             timeField.returnKeyType = UIReturnKeyDone;
+            timeField.userInteractionEnabled = NO;
             timeField.delegate = self;
+            Cell.tag = 100;
             [Cell.contentView addSubview:timeField];
         }
             break;
@@ -120,6 +124,8 @@
             styleField.borderStyle = UITextBorderStyleRoundedRect;
             styleField.returnKeyType = UIReturnKeyDone;
             styleField.delegate = self;
+            styleField.userInteractionEnabled = NO;
+            Cell.tag = 100;
             [Cell.contentView addSubview:styleField];
         }
             break;
@@ -138,6 +144,20 @@
     Cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return Cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row==1||indexPath.row==2) {
+        PickerType type;
+        if (indexPath.row==1) {
+            type = PickerTypeDate;
+        }else if (indexPath.row==2){
+            type = PickerTypeStyle;
+        }
+        pickerView = [[SSLPickerView alloc] initWithType:type delegate:self];
+        [pickerView showInView:self.view];
+    }
+    
+}
+
 #pragma mark - UITextField方法
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
@@ -153,4 +173,34 @@
     }
     return YES;
 }
+#pragma mark - LocatePicker delegate
+-(void)selectByType:(PickerType)type andTitle:(NSString *)title
+{
+    switch (type)
+    {
+        case PickerTypeDate:
+            ;
+            timeField.text = title;
+            
+            break;
+        case PickerTypeStyle:
+            styleField.text = title;
+        default:
+            break;
+    }
+}
+
+-(void)finishSelect:(PickerType)type
+{
+    if ((type!=PickerTypeSex)&& !DEVICE_IS_IPHONE5)
+    {
+        CGRect frame = editNBTableView.frame;
+        frame.origin.y = 0;
+        [UIView animateWithDuration:0.3
+                         animations:^{
+                             editNBTableView.frame = frame;
+                         }];
+    }
+}
+
 @end
