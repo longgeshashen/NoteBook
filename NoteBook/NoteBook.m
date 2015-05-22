@@ -9,5 +9,10 @@
 #import "NoteBook.h"
 
 @implementation NoteBook
-@synthesize noteContent,noteName,noteTime,noteId;
+@synthesize noteContent;
+@synthesize noteName;
+@synthesize noteTime;
+@synthesize noteStyle;
+@synthesize noteId;
+
 @end

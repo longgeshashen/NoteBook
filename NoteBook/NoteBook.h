@@ -10,7 +10,9 @@
 
 @interface NoteBook : NSObject
 @property (nonatomic)NSInteger noteId;
-@property (nonatomic,strong) NSString *noteName;
-@property (nonatomic,strong) NSString *noteTime;
-@property (nonatomic,strong) NSString *noteContent;
+@property (nonatomic,strong) NSString *noteName;    //日记名字
+@property (nonatomic,strong) NSString *noteTime;    //日记时间
+@property (nonatomic,strong) NSString *noteStyle;   //日记类型
+@property (nonatomic,strong) NSString *noteContent; //日记内容
+
 @end

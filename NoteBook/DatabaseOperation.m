@@ -25,7 +25,7 @@
     self = [super init];
     if (self) {
         if (![db tableExists:TABLE_NAME_NOTEBOOK]) {
-            NSString *sql = [self SQL:@"create table if not exists '%@'('noteId' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'noteName' text,'noteTime' text,'noteContent' text);" inTable:TABLE_NAME_NOTEBOOK];
+            NSString *sql = [self SQL:@"create table if not exists '%@'('noteId' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'noteName' text,'noteTime' text,'noteStyle' text,'noteContent' text);" inTable:TABLE_NAME_NOTEBOOK];
             BOOL result = [db executeUpdate:sql];
             if (result) {
                 debugLog(@"create table success");
@@ -54,6 +54,7 @@
             nb.noteId = [resultSet intForColumn:@"noteId"];
             nb.noteName = [resultSet stringForColumn:@"noteName"];
             nb.noteTime = [resultSet stringForColumn:@"noteTime"];
+            nb.noteStyle = [resultSet stringForColumn:@"noteStyle"];
             nb.noteContent = [resultSet stringForColumn:@"noteContent"];
             [resultArr addObject:nb];
         }
@@ -76,6 +77,7 @@
             nb.noteId = [result intForColumn:@"noteId"];
             nb.noteName = [result stringForColumn:@"noteName"];
             nb.noteTime = [result stringForColumn:@"noteTime"];
+            nb.noteStyle = [result stringForColumn:@"noteStyle"];
             nb.noteContent = [result stringForColumn:@"noteContent"];
             [resultArr addObject:nb];
         }
@@ -114,12 +116,13 @@
         //
         NSString *noteNamestr = [[NSString alloc] initWithString:noteBook.noteName];
         NSString *noteTimestr = [[NSString alloc] initWithString:noteBook.noteTime];
+        NSString *noteStylestr = [[NSString alloc] initWithString:noteBook.noteStyle];
         NSString *noteContentstr = [[NSString alloc] initWithString:noteBook.noteContent];
         //db
         if ([db open]) {
             [db beginTransaction];
-            NSString *sql = [self SQL:@"insert into %@ ('noteName','noteTime','noteContent')values(?,?,?);" inTable:TABLE_NAME_NOTEBOOK];
-            BOOL res = [db executeUpdate:sql,noteNamestr,noteTimestr,noteContentstr];
+            NSString *sql = [self SQL:@"insert into %@ ('noteName','noteTime','noteStyle','noteContent')values(?,?,?,?);" inTable:TABLE_NAME_NOTEBOOK];
+            BOOL res = [db executeUpdate:sql,noteNamestr,noteTimestr,noteStylestr,noteContentstr];
             if (res) {
                 debugLog(@"插入数据成功");
             }else{
@@ -162,10 +165,11 @@
     BOOL success = YES;
     NSString *noteNamestr = [[NSString alloc] initWithString:noteBook.noteName];
     NSString *noteTimestr = [[NSString alloc] initWithString:noteBook.noteTime];
+    NSString *noteStylestr = [[NSString alloc] initWithString:noteBook.noteStyle];
     NSString *noteContentstr = [[NSString alloc] initWithString:noteBook.noteContent];
     if ([db open]) {
         [db beginTransaction];
-        BOOL res = [db executeUpdate:[self SQL:@"update %@ set noteName = ?,noteTime = ?,noteContent = ? where noteId = ?" inTable:TABLE_NAME_NOTEBOOK],noteNamestr,noteTimestr,noteContentstr,indexID];
+        BOOL res = [db executeUpdate:[self SQL:@"update %@ set noteName = ?,noteTime = ?,noteStyle = ?,noteContent = ? where noteId = ?" inTable:TABLE_NAME_NOTEBOOK],noteNamestr,noteTimestr,noteStylestr,noteContentstr,indexID];
         if (res) {
             debugLog(@"更新成功");
         }else{

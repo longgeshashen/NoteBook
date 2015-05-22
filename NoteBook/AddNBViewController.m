@@ -13,12 +13,13 @@
 
 @property (nonatomic,strong)UITextField *nameField;
 @property (nonatomic,strong)UITextField *timeField;
+@property (nonatomic,strong)UITextField *styleField;
 @property (nonatomic,strong)UITextView *contentTextView;
 
 @end
 
 @implementation AddNBViewController
-@synthesize editNBTableView,nameField,timeField,contentTextView;
+@synthesize editNBTableView,nameField,timeField,styleField,contentTextView;
 - (void)viewDidLoad {
     [super viewDidLoad];
     //
@@ -43,12 +44,23 @@
 }
 - (void)comlpleteEdit{
     NSLog(@"\n name:%@\n time:%@\n content:%@",nameField.text,timeField.text,contentTextView.text);
+    if ([nameField.text length] ==0||[timeField.text length]==0||[contentTextView.text length]==0||[styleField.text length]==0) {
+        UIAlertView *alertNil = [[UIAlertView alloc] initWithTitle:@"创建失败"
+                                                           message:@"请将信息补充完整"
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"确定"
+                                                 otherButtonTitles:nil, nil];
+        [alertNil show];
+        return;
+    }
     //初始化notebook
     NoteBook *notebook = [[NoteBook alloc] init];
     notebook.noteName = nameField.text;
     notebook.noteTime = timeField.text;
+    notebook.noteStyle = styleField.text;
     notebook.noteContent = contentTextView.text;
-    notebook.noteId = -1;
+    notebook.noteId = -1;//noteId = -1表示保存，noteID>0表示更新对应数据
+    
     //保存
     DatabaseOperation *op = [DatabaseOperation sharedInstance];
     [op saveNoteBook:notebook];
@@ -71,10 +83,10 @@
 */
 #pragma mark - 列表方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return 4;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row==2) {
+    if (indexPath.row==3) {
         return 150.0f;
     }
     return 50.0f;
@@ -104,6 +116,15 @@
             break;
         case 2:
         {
+            styleField = [[UITextField alloc] initWithFrame:CGRectMake(100, 10, 200, 30)];
+            styleField.borderStyle = UITextBorderStyleRoundedRect;
+            styleField.returnKeyType = UIReturnKeyDone;
+            styleField.delegate = self;
+            [Cell.contentView addSubview:styleField];
+        }
+            break;
+        case 3:
+        {
             contentTextView = [[UITextView alloc] initWithFrame:CGRectMake(100, 10, 200, 70)];
             contentTextView.returnKeyType = UIReturnKeyDone;
             contentTextView.delegate = self;
@@ -122,6 +143,8 @@
     [textField resignFirstResponder];
     return YES;
 }
+
+
 #pragma mark - UITextView方法
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
     if ([text isEqualToString:@"\n"]) {

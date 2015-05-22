@@ -77,6 +77,7 @@
     //自定义cell赋值
     cell.nameLabel.text = notebook.noteName;
     cell.timeLabel.text = notebook.noteTime;
+    cell.styleLabel.text = notebook.noteStyle;
     cell.contentLabel.text = notebook.noteContent;
     
     return cell;
@@ -87,7 +88,7 @@
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGSize itemSize = CGSizeMake(kWidth-20.0f, 130.0f);
+    CGSize itemSize = CGSizeMake(kWidth-20.0f, 170.0f);
     return itemSize;
 }
 #pragma mark -- 段的间距
