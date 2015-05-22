@@ -77,10 +77,11 @@
     if (indexPath.row==2) {
         return 150.0f;
     }
-    return 60.0f;
+    return 50.0f;
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *Cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"noteBookCell%ld",indexPath.row] forIndexPath:indexPath];
+    
     
     switch (indexPath.row) {
         case 0:

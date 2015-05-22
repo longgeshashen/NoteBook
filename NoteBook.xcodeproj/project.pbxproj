@@ -143,11 +143,9 @@
 		3BA29B211AEF5E030021E543 = {
 			isa = PBXGroup;
 			children = (
-				3B768CCF1AF21B14009A9542 /* CoreGraphics.framework */,
-				3B768CCD1AF21B08009A9542 /* Foundation.framework */,
-				3B768CCB1AF21AAA009A9542 /* UIKit.framework */,
-				3BA29B571AEF653F0021E543 /* Framworks */,
+				3BA29B571AEF653F0021E543 /* ThirdFramworks */,
 				3BA29B2C1AEF5E030021E543 /* NoteBook */,
+				3BB9841D1B0EB9ED005D5B40 /* Frameworks */,
 				3BA29B461AEF5E030021E543 /* NoteBookTests */,
 				3BA29B2B1AEF5E030021E543 /* Products */,
 			);
@@ -179,9 +177,6 @@
 				3BA0DB1D1AF072F80043EFEE /* Database.m */,
 				3BA0DB1F1AF07BF80043EFEE /* DatabaseOperation.h */,
 				3BA0DB201AF07BF80043EFEE /* DatabaseOperation.m */,
-				3BA29B371AEF5E030021E543 /* Main.storyboard */,
-				3BA29B3A1AEF5E030021E543 /* Images.xcassets */,
-				3BA29B3C1AEF5E030021E543 /* LaunchScreen.xib */,
 				3BA29B561AEF5FAA0021E543 /* notebook.pch */,
 				3BA29B2D1AEF5E030021E543 /* Supporting Files */,
 			);
@@ -191,6 +186,9 @@
 		3BA29B2D1AEF5E030021E543 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3BA29B371AEF5E030021E543 /* Main.storyboard */,
+				3BA29B3A1AEF5E030021E543 /* Images.xcassets */,
+				3BA29B3C1AEF5E030021E543 /* LaunchScreen.xib */,
 				3BA29B531AEF5F620021E543 /* Images */,
 				3BA29B2E1AEF5E030021E543 /* Info.plist */,
 				3BA29B2F1AEF5E030021E543 /* main.m */,
@@ -224,14 +222,13 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		3BA29B571AEF653F0021E543 /* Framworks */ = {
+		3BA29B571AEF653F0021E543 /* ThirdFramworks */ = {
 			isa = PBXGroup;
 			children = (
 				3B768CBB1AF21871009A9542 /* MJRefresh */,
 				3BA29B5A1AEF658D0021E543 /* FMDB */,
-				3BA29B581AEF655D0021E543 /* libsqlite3.dylib */,
 			);
-			name = Framworks;
+			name = ThirdFramworks;
 			sourceTree = "<group>";
 		};
 		3BA29B5A1AEF658D0021E543 /* FMDB */ = {
@@ -250,6 +247,17 @@
 				3BA29B741AEF66320021E543 /* FMResultSet.m */,
 			);
 			name = FMDB;
+			sourceTree = "<group>";
+		};
+		3BB9841D1B0EB9ED005D5B40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BA29B581AEF655D0021E543 /* libsqlite3.dylib */,
+				3B768CCF1AF21B14009A9542 /* CoreGraphics.framework */,
+				3B768CCD1AF21B08009A9542 /* Foundation.framework */,
+				3B768CCB1AF21AAA009A9542 /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
