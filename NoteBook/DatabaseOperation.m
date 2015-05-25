@@ -206,6 +206,7 @@
     }
     return success;
 }
+#pragma mark - 清空表
 - (BOOL)cleanTable:(NSString*)tableName{
     BOOL success = YES;
     if ([db open]) {
