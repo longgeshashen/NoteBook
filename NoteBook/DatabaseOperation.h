@@ -31,4 +31,6 @@
 // DELETE
 - (BOOL) deleteAtIndex:(int)index;                       //删除
 
+//clean table
+- (BOOL) cleanTable:(NSString*)tableName;
 @end

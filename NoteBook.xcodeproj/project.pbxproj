@@ -26,7 +26,6 @@
 		3BA29B3B1AEF5E030021E543 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BA29B3A1AEF5E030021E543 /* Images.xcassets */; };
 		3BA29B3E1AEF5E030021E543 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA29B3C1AEF5E030021E543 /* LaunchScreen.xib */; };
 		3BA29B4A1AEF5E030021E543 /* NoteBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA29B491AEF5E030021E543 /* NoteBookTests.m */; };
-		3BA29B551AEF5F740021E543 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA29B541AEF5F740021E543 /* icon.png */; };
 		3BA29B591AEF655D0021E543 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA29B581AEF655D0021E543 /* libsqlite3.dylib */; };
 		3BA29B751AEF66320021E543 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA29B6B1AEF66320021E543 /* FMDatabase.m */; };
 		3BA29B761AEF66320021E543 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA29B6D1AEF66320021E543 /* FMDatabaseAdditions.m */; };
@@ -86,7 +85,6 @@
 		3BA29B431AEF5E030021E543 /* NoteBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BA29B481AEF5E030021E543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BA29B491AEF5E030021E543 /* NoteBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteBookTests.m; sourceTree = "<group>"; };
-		3BA29B541AEF5F740021E543 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		3BA29B561AEF5FAA0021E543 /* notebook.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = notebook.pch; sourceTree = "<group>"; };
 		3BA29B581AEF655D0021E543 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3BA29B6A1AEF66320021E543 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -184,8 +182,8 @@
 				3BA29B801AEF78F90021E543 /* AddNBViewController.m */,
 				3BB984231B0ED81E005D5B40 /* SSLPickerView.h */,
 				3BB984241B0ED81E005D5B40 /* SSLPickerView.m */,
-				3BB984281B0F0F8E005D5B40 /* PickerStyle.plist */,
 				3BB984261B0ED86F005D5B40 /* SSLPickerView.xib */,
+				3BB984281B0F0F8E005D5B40 /* PickerStyle.plist */,
 				3BA29B2D1AEF5E030021E543 /* Supporting Files */,
 			);
 			path = NoteBook;
@@ -225,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				3BA29B7A1AEF6D1E0021E543 /* bg.jpeg */,
-				3BA29B541AEF5F740021E543 /* icon.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -372,7 +369,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BA29B7B1AEF6D1E0021E543 /* bg.jpeg in Resources */,
-				3BA29B551AEF5F740021E543 /* icon.png in Resources */,
 				3BB984291B0F0F8E005D5B40 /* PickerStyle.plist in Resources */,
 				3B768CC61AF21871009A9542 /* MJRefresh.bundle in Resources */,
 				3BA29B391AEF5E030021E543 /* Main.storyboard in Resources */,

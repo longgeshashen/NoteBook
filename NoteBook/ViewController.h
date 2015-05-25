@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UIGestureRecognizerDelegate,UIActionSheetDelegate>
 {
-    NSInteger dataCount;
-    NSArray *dataArray;
+    NSMutableArray *dataArray; //数据数组，可变，方便增删
 }
-@property (nonatomic,strong)UICollectionView *collectionView;
+@property (nonatomic,strong)UICollectionView *collectionView;   //列表
+@property (nonatomic,strong)UIGestureRecognizer *longP;         //转存手势
 @end
 

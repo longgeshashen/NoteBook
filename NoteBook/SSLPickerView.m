@@ -50,7 +50,7 @@
             case PickerTypeDate:
             {
                 [sslPickerView removeFromSuperview];
-                UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 75, kWidth, 205)];
+                UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 60, kWidth, 220)];
                 datePicker.datePickerMode = UIDatePickerModeDate;
                 datePicker.maximumDate = [NSDate date];
                 datePicker.backgroundColor = [UIColor clearColor];
@@ -94,7 +94,7 @@
     [self setAlpha:1.0f];
     [self.layer addAnimation:animation forKey:@"LocatePickerView"];
     
-    self.frame = CGRectMake(0, view.frame.size.height - self.frame.size.height, kWidth, self.frame.size.height);
+    self.frame = CGRectMake(0, view.frame.size.height - self.frame.size.height-(DeviceVersion>=7.0?64:44), kWidth, self.frame.size.height);
     [view addSubview:self];
 }
 #pragma mark - PickerView

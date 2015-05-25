@@ -194,16 +194,33 @@
             debugLog(@"delete success");
         }else{
             debugLog(@"Failed to delete");
+            success = NO;
         }
         [db close];
-        if ([db hadError]) {
-            debugLog(@"err %d:%@",[db lastErrorCode],[db lastErrorMessage]);
-            success = NO;
-        }else{
-            [db clearCachedStatements];
-        }
+//        if ([db hadError]) {
+//            debugLog(@"err %d:%@",[db lastErrorCode],[db lastErrorMessage]);
+//            success = NO;
+//        }else{
+//            [db clearCachedStatements];
+//        }
     }
     return success;
 }
-
+- (BOOL)cleanTable:(NSString*)tableName{
+    BOOL success = YES;
+    if ([db open]) {
+        if (tableName) {
+            BOOL res = [db executeUpdate:[NSString stringWithFormat:@"delete from %@",tableName]];
+            if (res) {
+                debugLog(@"clean table success");
+            }else{
+                debugLog(@"Failed to clean table");
+                success = NO;
+            }
+        }
+        [db close];
+    }
+    
+    return success;
+}
 @end
