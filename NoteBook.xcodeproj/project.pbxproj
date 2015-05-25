@@ -184,7 +184,6 @@
 				3BB984231B0ED81E005D5B40 /* SSLPickerView.h */,
 				3BB984241B0ED81E005D5B40 /* SSLPickerView.m */,
 				3BB984261B0ED86F005D5B40 /* SSLPickerView.xib */,
-				3BB984281B0F0F8E005D5B40 /* PickerStyle.plist */,
 				3BA29B2D1AEF5E030021E543 /* Supporting Files */,
 			);
 			path = NoteBook;
@@ -193,6 +192,7 @@
 		3BA29B2D1AEF5E030021E543 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3BB984281B0F0F8E005D5B40 /* PickerStyle.plist */,
 				3BA29B371AEF5E030021E543 /* Main.storyboard */,
 				3BA29B3A1AEF5E030021E543 /* Images.xcassets */,
 				3BA29B3C1AEF5E030021E543 /* LaunchScreen.xib */,

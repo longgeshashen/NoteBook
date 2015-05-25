@@ -57,6 +57,7 @@
         [alertNil show];
         return;
     }
+    
     //初始化notebook
     NoteBook *notebook = [[NoteBook alloc] init];
     notebook.noteName = nameField.text;
@@ -68,6 +69,7 @@
     //保存
     DatabaseOperation *op = [DatabaseOperation sharedInstance];
     [op saveNoteBook:notebook];
+    
     //返回首页
     [self.navigationController popViewControllerAnimated:YES];
 }
