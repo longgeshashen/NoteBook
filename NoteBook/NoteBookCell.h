@@ -10,9 +10,10 @@
 #import "NoteBook.h"
 @interface NoteBookCell : UICollectionViewCell
 
-@property (nonatomic,strong)UILabel *nameLabel;
-@property (nonatomic,strong)UILabel *timeLabel;
-@property (nonatomic,strong)UILabel *styleLabel;
-@property (nonatomic,strong)UILabel *contentLabel;
-@property (nonatomic,strong)NoteBook *cellNotebook;
+@property (nonatomic,strong)UILabel *nameLabel;    //名字
+@property (nonatomic,strong)UILabel *timeLabel;    //时间
+@property (nonatomic,strong)UILabel *styleLabel;   //类型
+@property (nonatomic,strong)UILabel *contentLabel; //内容
+@property (nonatomic,strong)NoteBook *cellNotebook;//转存notebook
+
 @end

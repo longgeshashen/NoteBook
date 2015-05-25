@@ -131,7 +131,7 @@
     
     if (longPress.state==UIGestureRecognizerStateBegan) {
         
-        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"要删除了😢"
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"真的要删除了吗😢"
                                                            delegate:self
                                                   cancelButtonTitle:@"取消"
                                              destructiveButtonTitle:@"确定"
