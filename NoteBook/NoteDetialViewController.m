@@ -50,6 +50,7 @@
                                            NSParagraphStyleAttributeName:paragraph,
                                            NSFontAttributeName:[UIFont fontWithName:@"TrebuchetMS-Bold" size:13.0]
                                            };
+    
     NSAttributedString *attributeText = [[NSAttributedString alloc] initWithString:self.detialNoteBook.noteContent attributes:attributeNoteContent];
     detialContent.attributedText = attributeText;
 }

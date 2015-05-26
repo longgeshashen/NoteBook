@@ -200,23 +200,6 @@
     }
     
 }
-//- (NSArray *)findBug{
-//    NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:0];
-//    for (int i=1;i<3 ; i++) {
-////        User *user = [[User alloc] init];
-////        user.name = [NSString stringWithFormat:@"%d",i];
-////        user.account = [NSString stringWithFormat:@"a%d",i];
-////        [arr addObject:user];
-//        NoteBook *note = [[NoteBook alloc] init];
-//        note.noteName = @"1";
-//        note.noteTime = @"11";
-//        note.noteStyle = @"2";
-//        note.noteId = i;
-//        [arr addObject:note];
-//    }
-//    NSLog(@"arr == %@",arr);
-//    return arr;
-//    
-//}
+
 
 @end
