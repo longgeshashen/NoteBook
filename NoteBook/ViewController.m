@@ -12,6 +12,9 @@
 #import "NoteBookCell.h"
 #import "NoteBook.h"
 #import "MJRefresh.h"
+#import "NoteDetialViewController.h"
+
+
 @interface ViewController ()<MJRefreshBaseViewDelegate>
 
 @end
@@ -39,7 +42,7 @@
     //加载集合视图
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64, kWidth, kHeight-64) collectionViewLayout:flowLayout];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, topBarheight, kWidth, kHeight-topBarheight) collectionViewLayout:flowLayout];
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
     self.collectionView.delegate = self;
@@ -120,9 +123,19 @@
 
 #pragma mark -- 选择某一项
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    debugLog(@"%ld",indexPath.row);
     
-    
+    NoteBook *notebook = [dataArray objectAtIndex:indexPath.row];//获取数组里的数据
+ 
+    [self performSegueWithIdentifier:@"noteBookDetial" sender:notebook];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"noteBookDetial"]) {
+        
+        NoteDetialViewController *noteDetial = segue.destinationViewController;
+        
+        noteDetial.detialNoteBook = (NoteBook*)sender;
+        
+    }
 }
 #pragma mark - 长按手势
 - (void)handleLongPress:(UILongPressGestureRecognizer*)longPress{
@@ -187,11 +200,23 @@
     }
     
 }
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    if ([segue.identifier isEqualToString:@"ShowImage"]) {
-//        ImageShowViewController *imageShowVC = segue.destinationViewController;
-//        imageShowVC.image = (UIImage*)sender;
+//- (NSArray *)findBug{
+//    NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:0];
+//    for (int i=1;i<3 ; i++) {
+////        User *user = [[User alloc] init];
+////        user.name = [NSString stringWithFormat:@"%d",i];
+////        user.account = [NSString stringWithFormat:@"a%d",i];
+////        [arr addObject:user];
+//        NoteBook *note = [[NoteBook alloc] init];
+//        note.noteName = @"1";
+//        note.noteTime = @"11";
+//        note.noteStyle = @"2";
+//        note.noteId = i;
+//        [arr addObject:note];
 //    }
+//    NSLog(@"arr == %@",arr);
+//    return arr;
+//    
 //}
 
 @end

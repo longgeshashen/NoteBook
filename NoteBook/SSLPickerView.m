@@ -94,7 +94,7 @@
     [self setAlpha:1.0f];
     [self.layer addAnimation:animation forKey:@"LocatePickerView"];
     
-    self.frame = CGRectMake(0, view.frame.size.height - self.frame.size.height-(DeviceVersion>=7.0?64:44), kWidth, self.frame.size.height);
+    self.frame = CGRectMake(0, view.frame.size.height - self.frame.size.height-topBarheight, kWidth, self.frame.size.height);
     [view addSubview:self];
 }
 #pragma mark - PickerView

@@ -39,7 +39,7 @@
      //    debugLog(@"%d",delete);*/
     [super viewDidLoad];
     //
-    self.title = @"新建";
+    self.title = @"NEW";
     editNBTableView.delegate = self;
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(comlpleteEdit)];
     self.navigationItem.rightBarButtonItem = rightBarButton;
