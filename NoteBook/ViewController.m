@@ -44,7 +44,7 @@
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, topBarheight, kWidth, kHeight-topBarheight) collectionViewLayout:flowLayout];
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor brownColor];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     

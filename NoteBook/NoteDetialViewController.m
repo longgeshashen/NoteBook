@@ -46,9 +46,9 @@
     paragraph.hyphenationFactor = 5.0;
     
     NSDictionary *attributeNoteContent = @{NSForegroundColorAttributeName:[UIColor blackColor],
-                                           NSBackgroundColorAttributeName:[UIColor magentaColor],
+//                                           NSBackgroundColorAttributeName:[UIColor brownColor],
                                            NSParagraphStyleAttributeName:paragraph,
-                                           NSFontAttributeName:[UIFont fontWithName:@"TrebuchetMS-Bold" size:13.0]
+                                           NSFontAttributeName:[UIFont fontWithName:@"TrebuchetMS-Bold" size:16.0]
                                            };
     
     NSAttributedString *attributeText = [[NSAttributedString alloc] initWithString:self.detialNoteBook.noteContent attributes:attributeNoteContent];

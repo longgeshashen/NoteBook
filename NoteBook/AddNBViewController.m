@@ -150,6 +150,7 @@
         }
     }
     Cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    Cell.backgroundColor = [UIColor clearColor];
     return Cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
