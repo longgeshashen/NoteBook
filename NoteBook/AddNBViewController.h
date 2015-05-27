@@ -10,8 +10,8 @@
 #import "SSLPickerView.h"
 
 @interface AddNBViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,UITextViewDelegate,SSLPickerViewDelegate>
-@property (strong, nonatomic) SSLPickerView *pickerView;
-@property (strong, nonatomic) IBOutlet UITableView *editNBTableView;
 
+@property (strong, nonatomic) SSLPickerView        *pickerView;     //选择
+@property (strong, nonatomic) IBOutlet UITableView *editNBTableView;//列表
 
 @end

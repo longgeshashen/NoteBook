@@ -10,12 +10,12 @@
 #import "NoteBook.h"
 @interface NoteDetialViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *detialName;
-@property (weak, nonatomic) IBOutlet UILabel *detialType;
-@property (weak, nonatomic) IBOutlet UILabel *detialTime;
-//@property (weak, nonatomic) IBOutlet UILabel *detialContent;
-@property (weak, nonatomic) IBOutlet UITextView *detialContent;
-@property (retain, nonatomic) NoteBook *detialNoteBook;
+@property (weak, nonatomic) IBOutlet UILabel    *detialName;    //详情名字
+@property (weak, nonatomic) IBOutlet UILabel    *detialType;    //详情类型
+@property (weak, nonatomic) IBOutlet UILabel    *detialTime;    //详情时间
+@property (weak, nonatomic) IBOutlet UITextView *detialContent; //详情内容
+@property (retain, nonatomic) NoteBook          *detialNoteBook;//转存notebook
 
 - (void)initDetialLabels;
+
 @end

@@ -42,9 +42,9 @@
     //加载集合视图
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    
     self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, topBarheight, kWidth, kHeight-topBarheight) collectionViewLayout:flowLayout];
     self.collectionView.backgroundColor = [UIColor whiteColor];
-    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
@@ -69,7 +69,6 @@
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 #pragma mark - collectionViewDelegate
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -81,7 +80,9 @@
     return [dataArray count];
 }
 - (UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    NoteBook *notebook = [dataArray objectAtIndex:indexPath.row];//获取数组里的数据
+    
+    //获取数组里的数据
+    NoteBook *notebook = [dataArray objectAtIndex:indexPath.row];
 
     static NSString *Identifier = @"noteCell";
     NoteBookCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:Identifier forIndexPath:indexPath];
@@ -97,9 +98,9 @@
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]
                                                initWithTarget:self
                                                action:@selector(handleLongPress:)];
+    cell.tag = indexPath.row;
     longPress.delegate = self;
     longPress.minimumPressDuration = 1.0;
-    cell.tag = indexPath.row;
     [cell addGestureRecognizer:longPress];
     
     return cell;
@@ -128,6 +129,7 @@
  
     [self performSegueWithIdentifier:@"noteBookDetial" sender:notebook];
 }
+#pragma mark-- 查看详情
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"noteBookDetial"]) {
         
@@ -172,6 +174,7 @@
         
     }
 }
+#pragma mark--删除
 - (void)deleteCell:(UIGestureRecognizer*)longPress{
 
     DatabaseOperation *dbo = [[DatabaseOperation alloc] init];

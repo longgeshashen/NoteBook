@@ -23,25 +23,14 @@
 @synthesize pickerView;
 
 - (void)viewDidLoad {
-    /*
-     //    //查找,设置查找条件
-     //    DatabaseOperation *dbop = [[DatabaseOperation alloc] init];
-     //    NSArray *arr = [dbop findByCriteria:@" where noteId = 2"];//where前面要加一个空格，满足SQL格式
-     //    debugLog(@"%@",arr);
-     //    //查找第一个数据
-     //    NoteBook *nb = [dbop findFirstByCriteria:nil];
-     //    debugLog(@"%@",nb);
-     //计数
-     //    int count = [dbop countByCriteria:nil];
-     //    debugLog(@"%d",count);
-     //删除数据
-     //    BOOL delete = [dbop deleteAtIndex:2];
-     //    debugLog(@"%d",delete);*/
+    
     [super viewDidLoad];
-    //
+    
     self.title = @"NEW";
     editNBTableView.delegate = self;
-    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(comlpleteEdit)];
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                    target:self
+                                                                                    action:@selector(comlpleteEdit)];
     self.navigationItem.rightBarButtonItem = rightBarButton;
 
 }
@@ -64,7 +53,9 @@
     notebook.noteTime = timeField.text;
     notebook.noteStyle = styleField.text;
     notebook.noteContent = contentTextView.text;
-    notebook.noteId = -1;//noteId = -1表示保存，noteID>0表示更新对应数据
+    
+    //noteId = -1表示保存，noteID>0表示更新对应数据
+    notebook.noteId = -1;
     
     //保存
     DatabaseOperation *op = [DatabaseOperation sharedInstance];
@@ -95,7 +86,6 @@
         Cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier];
         switch (indexPath.row) {
             case 0:
-                
             {
                 UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 15, 80, 30)];
                 nameLabel.text = @"名字：";

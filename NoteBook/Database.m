@@ -25,6 +25,7 @@
     }
     return self;
 }
+#pragma mark - 执行SQL语句
 - (NSString*)SQL:(NSString *)sql inTable:(NSString *)table{
     return [NSString stringWithFormat:sql,table];
 }

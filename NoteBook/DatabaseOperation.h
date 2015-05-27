@@ -16,21 +16,21 @@
 
 + (id)sharedInstance;                                    //单例
 
-// SELECT
+// 查找
 - (NSMutableArray *) findByCriteria:(NSString *)criteria;//按条件查找
 - (NoteBook *) findFirstByCriteria:(NSString *)criteria; //查找第一个
 - (NSInteger) countByCriteria:(NSString *)criteria;      //计数，满足条件的个数
 
-// INSERT
+// 插入
 - (void) saveNoteBook:(NoteBook *)noteBook;              //保存，插入
 //- (void) saveNoteBooks:(NSArray *)noteBooks;           //保存多个数据，对于多参数数据存数不对，需要调整
 
-// UPDATE
+// 更新
 - (BOOL) updateAtIndex:(NSInteger)index withNoteBook:(NoteBook *)noteBook;//更新
 
-// DELETE
+// 删除
 - (BOOL) deleteAtIndex:(int)index;                       //删除
 
-//clean table
+// 清空
 - (BOOL) cleanTable:(NSString*)tableName;
 @end
